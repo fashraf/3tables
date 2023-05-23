@@ -1,0 +1,115 @@
+﻿.pagination-ys {
+    /*display: inline-block;*/
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+    .pagination-ys table > tbody > tr > td {
+        display: inline;
+    }
+
+        .pagination-ys table > tbody > tr > td > a,
+        .pagination-ys table > tbody > tr > td > span {
+            position: relative;
+            float: left;
+            padding: 8px 12px;
+            line-height: 1.42857143;
+            text-decoration: none;
+            color: #dd4814;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            margin-left: -1px;
+        }
+
+        .pagination-ys table > tbody > tr > td > span {
+            position: relative;
+            float: left;
+            padding: 8px 12px;
+            line-height: 1.42857143;
+            text-decoration: none;
+            margin-left: -1px;
+            z-index: 2;
+            color: #aea79f;
+            background-color: #f5f5f5;
+            border-color: #dddddd;
+            cursor: default;
+        }
+
+        .pagination-ys table > tbody > tr > td:first-child > a,
+        .pagination-ys table > tbody > tr > td:first-child > span {
+            margin-left: 0;
+            border-bottom-left-radius: 4px;
+            border-top-left-radius: 4px;
+        }
+
+        .pagination-ys table > tbody > tr > td:last-child > a,
+        .pagination-ys table > tbody > tr > td:last-child > span {
+            border-bottom-right-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+
+        .pagination-ys table > tbody > tr > td > a:hover,
+        .pagination-ys table > tbody > tr > td > span:hover,
+        .pagination-ys table > tbody > tr > td > a:focus,
+        .pagination-ys table > tbody > tr > td > span:focus {
+            color: #97310e;
+            background-color: #eeeeee;
+            border-color: #dddddd;
+        }
+
+
+
+.form-label {
+    font-weight: 800;
+}
+
+     /*Blinking*/
+
+.blink_me {
+    animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+/*Loading*/
+#overlay {
+    position: fixed;
+    z-index: 99;
+    top: 0px;
+    left: 0px;
+    background-color: #f8f8f8;
+    width: 100%;
+    height: 100%;
+    filter: Alpha(Opacity=90);
+    opacity: 0.9;
+    -moz-opacity: 0.9;
+}
+
+#theprogress {
+    background-color: #fff;
+    border: 1px none #ccc;
+    padding: 10px;
+    width: 300px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    filter: Alpha(Opacity=100);
+    opacity: 1;
+    -moz-opacity: 1;
+}
+
+#modalprogress {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin: -11px 0 0 -150px;
+    color: #990000;
+    font-weight: bold;
+    font-size: 28px;
+    font-family: SC_AMEEN;
+}

@@ -1,0 +1,225 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="InternalLims.MasterPage.MasterPage" %>
+
+<%@ Register Src="~/MasterPage/menu.ascx" TagPrefix="uc1" TagName="menu" %>
+<%@ Register Src="~/MasterPage/noti.ascx" TagPrefix="uc1" TagName="noti" %>
+
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Novogenomics -Admin </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta content="Novogenomics Admin" name="description">
+        <meta content="NovoAdmin" name="author">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <link href="../assets/plugins/datatables/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/plugins/datatables/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <!-- Responsive datatable examples -->
+        <link href="../assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+        <link href="../assets/plugins/select2/select2.min.css" rel="stylesheet" />
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/metisMenu.min.css" rel="stylesheet" />
+        <link href="../assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="../assets/plugins/jquery-steps/jquery.steps.css">
+        <link href="../assets/css/Dropzone.css" rel="stylesheet" />
+        <link href="../assets/css/grid.css" rel="stylesheet" />
+        <link href="../assets/dt/bootstrap-datetimepicker.css" rel="stylesheet" />
+        <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/toastr/toastr_new.css" rel="stylesheet" />
+        <link href="../assets/plugins/datatables/dataTables.bootstrap5.min.css" rel="stylesheet" />
+        <link href="../assets/fullcalendar/fullcalendar.min.css" rel="stylesheet" />
+        <link href="../assets/css/app.css" rel="stylesheet" />
+
+<%--        <link href="https://codeseven.github.io/toastr/build/toastr.min.css" rel="stylesheet" type="text/css" />
+--%>
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="../assets/images/mainlogo.png">
+        <!-- Plugins css -->
+         <%-- <link href="../assets/plugins/datatables/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/plugins/datatables/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <!-- Responsive datatable examples -->
+        <link href="../assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />--%>
+
+        <%--   <link href="../assets/plugins/select2/select2.min.css" rel="stylesheet" />
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="../assets/plugins/jquery-steps/jquery.steps.css">
+        <link href="../assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
+        <link href="../assets/css/grid.css" rel="stylesheet" />
+          <link href="../assets/css/Dropzone.css" rel="stylesheet" />
+        <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/dt/bootstrap-datetimepicker.css" rel="stylesheet" />--%>
+
+
+     <%--   <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;500&display=swap" rel="stylesheet">
+        <style>
+            body, a {
+                font-family: 'Cairo', sans-serif;
+            }
+
+            .form-label, .col-form-label, .form-control {
+                color: black;
+                font-weight: 600;
+            }
+        </style>--%>
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+    </head>
+    <body class="dark-sidenav">
+        <!-- Left Sidenav -->
+        <div class="left-sidenav">
+            <!-- LOGO -->
+            <div class="brand">
+                <a href="../Main/Default" class="logo">
+                    <span></span>
+                    <span>
+                        <a style="font: bold; font-size: 28px; color: #D0B54B">NOVO<span style="font: bold; font-size: 28px; color: white">admin</span></a>
+                    </span>
+                </a>
+            </div>
+            <!--end logo-->
+            <div class="menu-content h-100" data-simplebar="init">
+                <uc1:menu runat="server" ID="menu" />
+                <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+                    <div class="simplebar-scrollbar simplebar-visible" style="width: 0px; display: none;"></div>
+                </div>
+                <div class="simplebar-track simplebar-vertical" style="visibility: hidden;">
+                    <div class="simplebar-scrollbar simplebar-visible" style="height: 0px; display: none;"></div>
+                </div>
+            </div>
+        </div>
+        <!-- end left-sidenav-->
+
+
+        <div class="page-wrapper">
+            <!-- Top Bar Start -->
+            <div class="topbar">
+                <!-- Navbar -->
+                <nav class="navbar-custom">
+                    <ul class="list-unstyled topbar-nav float-end mb-0">
+                        <uc1:noti runat="server" ID="noti" />
+
+                        <li class="dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <span class="ms-1 nav-user-name hidden-sm"></span>
+                                <img src="../assets/images/single.png" alt="profile-user" class="rounded-circle thumb-xs">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user align-self-center icon-xs icon-dual me-1">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                    <asp:Label ID="NameLbl" runat="server"></asp:Label></a>
+                                <div class="dropdown-divider mb-0"></div>
+                                <a class="dropdown-item" href="../Logout">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-power align-self-center icon-xs icon-dual me-1">
+                                        <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
+                                    Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <!--end topbar-nav-->
+
+                    <ul class="list-unstyled topbar-nav mb-0">
+                        <li>
+                            <button class="nav-link button-menu-mobile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu align-self-center topbar-icon">
+                                    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                            </button>
+                        </li>
+                         <li class="creat-btn">
+                            <div class="nav-link">
+                                <a class="font-18 fw-bold mt-0 mb-4"><asp:Label ID="Name_Lbl" runat="server" Font-Bold="true"></asp:Label></a>
+                            </div>                                
+                        </li>     
+                    </ul>
+                </nav>
+                <!-- end navbar-->
+            </div>
+            <!-- Top Bar End -->
+
+            <!-- Page Content-->
+            <div class="page-content">
+                <div class="container-fluid">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <!-- container -->
+
+                <footer class="footer text-center text-sm-start">
+                    ©
+                  <script>
+                      document.write(new Date().getFullYear())
+                  </script>
+                    novogenomics <span class="text-muted d-none d-sm-inline-block float-end">Crafted with <i class="mdi mdi-heart text-danger"></i>by IT Department</span>
+                </footer>
+                <ul class="notifications"></ul>
+                <!--end footer-->
+                <div id="toast" class="toast d-flex align-items-center text-white bg-primary border-0 fade">
+                    <div id="img"><i data-feather="alert-triangle"></i></div>
+                    <div id="desc"></div>
+                </div>
+            </div>
+            <!-- end page content -->
+        </div>
+        <!-- end page-wrapper -->
+
+       <%-- <script src="../assets/js/jquery.min.js"></script>--%>
+       <%-- <script src="../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/js/metismenu.min.js"></script>
+        <script src="../assets/js/waves.js"></script>
+        <script src="../assets/js/feather.min.js"></script>
+        <script src="../assets/js/simplebar.min.js"></script>
+        <script src="../assets/js/moment.js"></script>
+        <script src="../assets/plugins/daterangepicker/daterangepicker.js"></script>
+        <script src="../assets/plugins/jquery-steps/jquery.steps.min.js"></script>
+        <script src="../assets/pages/jquery.form-wizard.init.js"></script>
+        <script src="../assets/dt/bootstrap-datepicker.min.js"></script>
+        <script src="../assets/dt/bootstrap-datetimepicker.min.js"></script>--%>
+
+        <%--        <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="../assets/plugins/datatables/dataTables.bootstrap5.min.js"></script>
+        <script src="../assets/plugins/datatables/dataTables.responsive.min.js"></script>
+        <script src="../assets/plugins/datatables/responsive.bootstrap4.min.js"></script>
+        <script src="../assets/pages/jqueryjquery.datatable.init.js"></script>--%>
+      <%--  <script src="../assets/js/dropzone.js"></script>
+        <script src="../assets/js/block.js"></script>
+        <script src="../assets/plugins/select2/select2.min.js"></script>--%>
+        <!-- App js -->
+        <%--<script src="../assets/js/app.js"></script>--%>
+
+         <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/metismenu.min.js"></script>
+    <script src="../assets/js/waves.js"></script>
+    <script src="../assets/js/feather.min.js"></script>
+    <script src="../assets/js/simplebar.min.js"></script>
+    <script src="../assets/js/moment.js"></script>
+    <script src="../assets/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="../assets/plugins/jquery-steps/jquery.steps.min.js"></script>
+    <script src="../assets/pages/jquery.form-wizard.init.js"></script>
+    <script src="../assets/js/block.js"></script>
+        <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="../assets/plugins/datatables/dataTables.bootstrap5.min.js"></script>
+    <script src="../assets/dt/bootstrap-datetimepicker.js"></script>
+    <script src="../assets/dt/bootstrap-datepicker.min.js"></script>
+    <script src="../assets/plugins/select2/select2.min.js"></script>
+    <script src="../assets/js/dropzone.js"></script>
+
+    <!-- App js -->
+          <script src="../assets/toastr/toastr.js"></script>
+    <script src="../assets/toastr/toastr.min.js"></script>
+          <script src="../assets/toastr/myScripts.js"></script>
+         <script src="../assets/toastr/Common.js"></script>
+        <script src="../assets/fullcalendar/fullcalendar.min.js"></script>
+    <script src="../assets/js/app.js"></script>
+
+    </body>
+    </html>

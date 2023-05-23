@@ -1,0 +1,26 @@
+﻿1. Bind All dropdownlist with respected master tables ==> done.
+2. In Calendar future date should be disabled ==> done.
+3. Numeric field restrict to numbers only ==> numberonly
+4. restrict input in date fields ==>restrictinput
+4. Validation on mandatory fields with red border ==> 
+5. Uploads with restriction of extension and size
+
+
+
+CityDrop
+txtAddress
+EthnicDrop
+MenstrualPeriodTxt
+txtAgeOfGestation
+txtMaternalWeight
+MarriageConsanguineousDrop
+ModeConceptionDrop
+HistoryGeneticTestingDrop
+txtOthers
+LatestUltrasoundTxt
+txtUltrasoundFindings
+txtFurtherClinicalDetails
+txtRequestorName
+txtRequestorMobile
+txtRequstorEmail
+flexCheckChecked
